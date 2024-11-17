@@ -5,6 +5,9 @@ const { connectToMongoDB } = require("./connect");
 const URL = require("./models/url");
 const path = require("path");
 const staticRouter = require("./routes/staticRouter");
+const userRoute = require("./routes/user");
+const cookieParser = require("cookie-parser");
+const { restrictToLoggedInUserOnly, checkAuth } = require("./middlewares/auth");
 
 connectToMongoDB("mongodb://localhost:27017/short-url").then(() => {
   console.log("Connected to MongoDB");
@@ -15,11 +18,13 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.json()); // to parse json data
 app.use(express.urlencoded({ extended: false })); // to parse urlencoded data (form data)
+app.use(cookieParser());
 
 
-app.use("/", staticRouter);
+app.use("/",checkAuth, staticRouter);
+app.use("/url", restrictToLoggedInUserOnly, urlRoute);
+app.use("/user", userRoute);
 
-app.use("/url", urlRoute);
 
 
 

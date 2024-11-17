@@ -9,6 +9,20 @@ do npm i if node modules are not installed
 
 
 
+---------------------------
+go to cmd
+mongosh
+use short-url
+show collections
+db.urls.find({})
+db.users.find({})   
+db.urls.deleteMany({})
+--------------
+npm install uuid - to generate unique ids
+npm install cookie-parser - to parse cookies
+
+
+
 
 /*
 This codebase is a URL shortener application built using Node.js, Express, and MongoDB.
