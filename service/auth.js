@@ -1,11 +1,20 @@
-const sessionIdToUserIdMap = new Map();
-
-function setUser(id, user) {
-  sessionIdToUserIdMap.set(id, user);
+const jwt = require("jsonwebtoken");
+const secret = "saif$123";
+function setUser( user) {
+    return jwt.sign({
+        _id: user._id,
+        email: user.email,
+    }, secret);
 }
 
-function getUser(id) {
-  return sessionIdToUserIdMap.get(id);
+function getUser(token) {
+    if (!token) return null; // Check if token is provided
+    try {
+      return jwt.verify(token, secret); // Attempt to verify the token
+    } catch (error) {
+      console.error("Token verification failed:", error.message); // Log the error
+      return null; // Return null if verification fails
+    }
 }
 
-module.exports = { sessionIdToUserIdMap, setUser, getUser };
+module.exports = { setUser, getUser };

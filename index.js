@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false })); // to parse urlencoded data (f
 app.use(cookieParser());
 
 
+
 app.use("/",checkAuth, staticRouter);
 app.use("/url", restrictToLoggedInUserOnly, urlRoute);
 app.use("/user", userRoute);

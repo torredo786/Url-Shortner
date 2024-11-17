@@ -17,9 +17,12 @@ show collections
 db.urls.find({})
 db.users.find({})   
 db.urls.deleteMany({})
---------------
+--------------statefull auth
 npm install uuid - to generate unique ids
 npm install cookie-parser - to parse cookies
+
+---------------------stateless auth
+npm i jsonwebtoken
 
 
 
