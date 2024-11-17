@@ -1,0 +1,42 @@
+npm init - to create package.json
+npm install express
+npm install mongoose
+npm install shortid - to generate short ids
+npm install nodemon - to restart server automatically
+npm install ejs - to use ejs as template engine
+
+
+
+
+/*
+This codebase is a URL shortener application built using Node.js, Express, and MongoDB.
+
+1. `index.js`: This is the main entry point of the application. It sets up the Express server, connects to MongoDB, and defines the routes for the application. The server listens on port 8001.
+
+2. `routes/url.js`: This file defines the routes related to URL shortening. It includes routes for generating a new short URL, redirecting to the original URL using the short URL, and getting analytics for a short URL.
+
+3. `controllers/url.js`: This file contains the controller functions for handling the URL-related operations. It includes functions for generating a new short URL, redirecting to the original URL, and getting analytics for a short URL.
+
+4. `routes/staticRouter.js`: This file defines the route for rendering the home page. It fetches all the URLs from the database and passes them to the home page template.
+
+5. `views/home.ejs`: This is the EJS template for the home page. It includes a form for generating a new short URL and displays a table of all the short URLs along with their original URLs and visit history.
+
+6. `models/url.js`: This file defines the Mongoose schema and model for the URL. It includes fields for the short ID, the original URL, and the visit history.
+
+7. `connect.js`: This file contains the function for connecting to MongoDB using Mongoose.
+
+8. `package.json`: This file contains the metadata for the project, including the dependencies and scripts.
+
+Dependencies:
+- `express`: A web framework for Node.js.
+- `mongoose`: An ODM (Object Data Modeling) library for MongoDB and Node.js.
+- `shortid`: A library for generating short, unique, non-sequential IDs.
+- `nodemon`: A utility that automatically restarts the server when file changes are detected.
+- `ejs`: A template engine for generating HTML markup with plain JavaScript.
+*/
+
+
+
+
+
+
