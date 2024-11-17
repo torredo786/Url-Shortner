@@ -4,6 +4,8 @@ npm install mongoose
 npm install shortid - to generate short ids
 npm install nodemon - to restart server automatically
 npm install ejs - to use ejs as template engine
+mpm start
+do npm i if node modules are not installed
 
 
 
