@@ -13,7 +13,7 @@ function getUser(token) {
       return jwt.verify(token, secret); // Attempt to verify the token
     } catch (error) {
       console.error("Token verification failed:", error.message); // Log the error
-      return null; // Return null if verification fails
+      return res.redirect("/login");
     }
 }
 
